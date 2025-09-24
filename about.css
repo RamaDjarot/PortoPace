@@ -1,0 +1,106 @@
+/* Skill Logo Row Styles */
+.skill-logo-row {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 48px;
+	margin-bottom: 32px;
+	margin-top: -18px;
+}
+.skill-logo-col {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	min-width: 120px;
+}
+/* Skill Explanation Styles */
+.skill-explanation {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 48px;
+	margin-bottom: 32px;
+	margin-top: -18px;
+}
+.skill-exp-item {
+	font-size: 18px;
+	color: #333;
+	font-family: "Montserrat", sans-serif;
+	font-weight: 500;
+	text-align: center;
+	min-width: 120px;
+}
+/* Skill Section Styles */
+.skill-section {
+	width: 100vw;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 48px 0 32px 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: transparent;
+}
+.skill-title {
+	font-size: 32px;
+	font-weight: 700;
+	color: #222;
+	margin-bottom: 24px;
+	font-family: "Montserrat", sans-serif;
+    
+}
+.skill-logos {
+	display: flex;
+	gap: 48px;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 36px;
+}
+.skill-logo {
+	width: 72px;
+	height: 72px;
+	object-fit: contain;
+	filter: grayscale(1);
+	transition: filter 0.4s, transform 0.3s;
+}
+.skill-logo:hover {
+	filter: grayscale(0);
+	transform: scale(1.08);
+}
+.skill-split {
+	display: flex;
+	flex-direction: row;
+	gap: 64px;
+	width: 80%;
+	justify-content: center;
+	align-items: flex-start;
+	margin-top: 24px;
+}
+.skill-left, .skill-right {
+	flex: 1;
+	background: #fff;
+	border-radius: 18px;
+	box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+	padding: 32px 28px;
+	min-width: 220px;
+	max-width: 340px;
+}
+.skill-subtitle {
+	font-size: 22px;
+	font-weight: 600;
+	color: #222;
+	margin-bottom: 18px;
+	font-family: "Montserrat", sans-serif;
+    text-align: center;
+
+}
+.skill-list {
+	list-style: disc inside;
+	font-size: 18px;
+	color: #444;
+	line-height: 2.1;
+	margin-left: 0;
+	padding-left: 0;
+}

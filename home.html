@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="top-navbar">
+        <div class="navbar-left">Portofolio ~</div>
+        <div class="navbar-right">
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+        <nav class="sidebar-oval">
+            <ul>
+                 <li><span class="sidebar-link active" data-section="home"><img src="https://img.icons8.com/ios-filled/50/000000/home.png" alt="Home" class="sidebar-icon"></span></li>
+                 <li><span class="sidebar-link" data-section="about"><img src="https://img.icons8.com/ios-filled/50/000000/info.png" alt="About" class="sidebar-icon"></span></li>
+                 <li><span class="sidebar-link" data-section="contact"><img src="https://img.icons8.com/ios-filled/50/000000/contacts.png" alt="Contact" class="sidebar-icon"></span></li>
+            </ul>
+        </nav>
+        <main class="main-sections" id="main-section">
+            <section class="main-left">
+                <div class="main-name">About Me</div>
+                <!-- <div class="main-title"></div> -->
+                <div class="main-desc">Seseorang yang ingin menjadi Robot Engineer yang saat ini sedang belajar ilmu Robotika dan dunia AI. Saya senang mempelajari hal hal baru untuk membuka peluang baru.</div>
+                <section class="main-bottom">
+                    <span class="left-button" onclick="location.href='about.html'">About me</span>
+                    <!-- <span class="right-button">Contact</span>   -->
+                </section>
+            </section>
+            <section class="main-right">
+                <img src="sc/my foto.jpg" alt="Profile" class="main-oval-img">
+            </section>
+        </main>
+
+        <section class="about-section" id="about-section">
+            <div class="about-layout">
+                <section class="about-left">
+                    <div class="about-title">My Projects</div>
+                    <div class="about-desc">Ini adalah beberapa projek yang telah saya buat selama saya di SMA</div>
+                    <div class="about-bottom">
+                        <button class="about-learn-btn" onclick="location.href='projek.html'">Show More</button>
+                    </div>
+                </section>
+                <section class="about-right">
+                    <img src="sc/lptp.jpg" alt="Profile" class="about-img-60">
+                </section>
+            </div>
+        </section>
+
+        <section class="contact-section" id="contact-section">
+            <div class="main-sections contact-layout">
+                <section class="contact-left">
+                    <div class="contact-title">Contact Me</div>
+                    <div class="contact-desc">Silakan hubungi saya untuk kolaborasi, konsultasi, atau pertanyaan seputar pengembangan robot dan teknologi.</div>
+                    <div class="contact-socials">
+                        <a href="https://discord.com" class="social-btn" target="_blank" title="Discord">
+                            <img src="https://img.icons8.com/ios-filled/32/ffffff/discord-logo.png" alt="Discord">
+                        </a>
+                        <a href="https://www.instagram.com/ramm_.___?igsh=MWE2NjlwbnZvY2dzNw==" class="social-btn" target="_blank" title="Instagram">
+                            <img src="https://img.icons8.com/ios-filled/32/ffffff/instagram-new.png" alt="Instagram">
+                        </a>
+                        <a href="https://github.com" class="social-btn" target="_blank" title="GitHub">
+                            <img src="https://img.icons8.com/ios-filled/32/ffffff/github.png" alt="GitHub">
+                        </a>
+                        <a href="mailto:ramanarendra281@gmail.com" class="social-btn" target="_blank" title="Email">
+                            <img src="https://img.icons8.com/ios-filled/32/ffffff/new-post.png" alt="Email">
+                        </a>
+                    </div>
+                </section>
+                <section class="contact-right">
+                    <div class="contact-img-stack">
+                        <img src="sc/sunset.jpg" alt="Profile1" class="contact-img img1">
+                        <img src="sc/miror.jpg" alt="Profile2" class="contact-img img2">
+                    </div>
+                </section>
+            </div>
+        </section>
+    <script src="sidebar.js" defer></script>
+        <script>
+        // Intersection Observer for main section transitions
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.main-sections');
+            const observer = new window.IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, { threshold: 0.2 });
+            sections.forEach(section => observer.observe(section));
+        });
+        // Smooth scroll to each section
+        document.addEventListener('DOMContentLoaded', function() {
+            const homeBtn = document.querySelector('.sidebar-link[data-section="home"]');
+            const aboutBtn = document.querySelector('.sidebar-link[data-section="about"]');
+            const contactBtn = document.querySelector('.sidebar-link[data-section="contact"]');
+            const aboutSection = document.getElementById('about-section');
+            const homeSection = document.getElementById('main-section');
+            const contactSection = document.getElementById('contact-section');
+
+            if (homeBtn && homeSection) {
+                homeBtn.addEventListener('click', function() {
+                    homeSection.scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+            if (aboutBtn && aboutSection) {
+                aboutBtn.addEventListener('click', function() {
+                    aboutSection.scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+            if (contactBtn && contactSection) {
+                contactBtn.addEventListener('click', function() {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+
+            // Smooth scroll for contact button in main section
+            const contactButton = document.querySelector('.main-bottom .right-button');
+            if (contactButton && contactSection) {
+                contactButton.addEventListener('click', function() {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+        });
+        </script>
+    
+</body>
+</html>

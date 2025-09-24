@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+        <link rel="stylesheet" href="projek.css">
+
+    <title>My Projects</title>
+    <style>
+        .projek-img-animate {
+            width: 600px;
+            height: 550px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 0px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+            /* border: 4px solid #fff; */
+            background: #eee;
+            filter: grayscale(1);
+            transition: filter 0.5s;
+            animation: growIn 1s cubic-bezier(.4,0,.2,1);
+        }
+        .projek-img-animate:hover {
+            filter: grayscale(0);
+        }
+        @keyframes growIn {
+            0% {
+                transform: scale(0.6);
+                opacity: 0;
+            }
+            80% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-navbar">
+        <div class="navbar-left" style="display: flex; align-items: center; gap: 16px;">
+            <a href="home.html" class="back-btn" style="display: flex; align-items: center; text-decoration: none; color: inherit; padding: 4px 10px; border-radius: 50px; border: none; background: none; font-size: 1.2em; cursor: pointer; transition: background 0.2s;">
+                <span style="font-size: 1.5em; margin-right: 6px;">&#8592;</span> <!-- Left arrow -->
+            </a>
+            Portofolio ~
+        </div>
+        <div class="navbar-right">
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    <main class="about-section" id="about-section">
+        <div class="about-layout">
+            <section class="about-left">
+                <div class="about-title">My Projects</div>
+                <div class="about-desc">Ini adalah beberapa projek yang telah saya buat selama saya di SMA</div>
+            </section>
+            <section class="about-right">
+                <img src="sc/lptp.jpg" alt="Profile" class="projek-img-animate">
+            </section>
+        </div>
+    </main>
+    <section class="gallery-section" id="gallery-section">
+        <div class="gallery-title-wrapper">
+            <h2 class="gallery-title">My Gallery</h2>
+        </div>
+        <div class="gallery-images">
+            <div class="gallery-img-container left">
+                <img src="sc/mobil.jpg" alt="Gallery 1" class="gallery-img">
+                <div class="gallery-desc">Mini Car Mobile Remote Controler</div>
+            </div>
+            <div class="gallery-img-container right">
+                <img src="sc/tong.jpg" alt="Gallery 2" class="gallery-img">
+                <div class="gallery-desc">Automatic Trash Can</div>
+            </div>
+            <div class="gallery-img-container center">
+                <img src="sc/photo-collage.png.png" alt="Gallery 3" class="gallery-img">
+                <div class="gallery-desc">Website Job Search</div>
+            </div>
+        </div>
+    </section>
+    <script>
+    // Smooth scroll to gallery section
+    document.addEventListener('DOMContentLoaded', function() {
+        const galleryBtn = document.querySelector('.gallery-title');
+        if (galleryBtn) {
+            galleryBtn.addEventListener('click', function() {
+                document.getElementById('gallery-section').scrollIntoView({ behavior: 'smooth' });
+            });
+        }
+    });
+    </script>
+</body>
+</html>
